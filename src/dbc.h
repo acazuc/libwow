@@ -75,6 +75,7 @@ typedef struct wow_dbc_def_s
 extern const wow_dbc_def_t wow_dbc_animation_data_def[];
 extern const wow_dbc_def_t wow_dbc_area_poi_def[];
 extern const wow_dbc_def_t wow_dbc_area_table_def[];
+extern const wow_dbc_def_t wow_dbc_auction_house_def[];
 extern const wow_dbc_def_t wow_dbc_char_base_info_def[];
 extern const wow_dbc_def_t wow_dbc_char_hair_geosets_def[];
 extern const wow_dbc_def_t wow_dbc_char_sections_def[];
@@ -86,6 +87,9 @@ extern const wow_dbc_def_t wow_dbc_chr_races_def[];
 extern const wow_dbc_def_t wow_dbc_creature_display_info_def[];
 extern const wow_dbc_def_t wow_dbc_creature_display_info_extra_def[];
 extern const wow_dbc_def_t wow_dbc_creature_model_data_def[];
+extern const wow_dbc_def_t wow_dbc_game_object_display_info_def[];
+extern const wow_dbc_def_t wow_dbc_ground_effect_texture_def[];
+extern const wow_dbc_def_t wow_dbc_ground_effect_doodad_def[];
 extern const wow_dbc_def_t wow_dbc_helmet_geoset_vis_data_def[];
 extern const wow_dbc_def_t wow_dbc_item_def[];
 extern const wow_dbc_def_t wow_dbc_item_class_def[];

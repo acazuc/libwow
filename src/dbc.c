@@ -163,6 +163,16 @@ const wow_dbc_def_t wow_dbc_area_table_def[] =
 	          {WOW_DBC_TYPE_END, ""}
 };
 
+const wow_dbc_def_t wow_dbc_auction_house_def[] =
+{
+	/*  0 */ {WOW_DBC_TYPE_U32, "id"},
+	/*  4 */ {WOW_DBC_TYPE_U32, "faction"},
+	/*  8 */ {WOW_DBC_TYPE_U32, "deposit_rate"},
+	/* 12 */ {WOW_DBC_TYPE_U32, "consigment_rate"},
+	/* 16 */ {WOW_DBC_TYPE_LSTR, "name"},
+	         {WOW_DBC_TYPE_END, ""},
+};
+
 const wow_dbc_def_t wow_dbc_char_base_info_def[] =
 {
 	/* 0 */ {WOW_DBC_TYPE_U8, "race"},
@@ -384,6 +394,49 @@ const wow_dbc_def_t wow_dbc_creature_model_data_def[] =
 	/* 92 */ {WOW_DBC_TYPE_FLT, "world_effect_scale"},
 	/* 96 */ {WOW_DBC_TYPE_FLT, "attached_effect_scale"},
 	         {WOW_DBC_TYPE_END, ""}
+};
+
+const wow_dbc_def_t wow_dbc_game_object_display_info_def[] =
+{
+	/*  0 */ {WOW_DBC_TYPE_U32, "id"},
+	/*  4 */ {WOW_DBC_TYPE_STR, "model"},
+	/*  8 */ {WOW_DBC_TYPE_U32, "sound_stand"},
+	/* 12 */ {WOW_DBC_TYPE_U32, "sound_open"},
+	/* 16 */ {WOW_DBC_TYPE_U32, "sound_loop"},
+	/* 20 */ {WOW_DBC_TYPE_U32, "sound_close"},
+	/* 24 */ {WOW_DBC_TYPE_U32, "sound_destroy"},
+	/* 30 */ {WOW_DBC_TYPE_U32, "sound_opened"},
+	/* 34 */ {WOW_DBC_TYPE_U32, "sound_custom1"},
+	/* 38 */ {WOW_DBC_TYPE_U32, "sound_custom2"},
+	/* 42 */ {WOW_DBC_TYPE_U32, "sound_custom3"},
+	/* 46 */ {WOW_DBC_TYPE_U32, "sound_custom4"},
+	/* 50 */ {WOW_DBC_TYPE_FLT, "geobox_min_x"},
+	/* 54 */ {WOW_DBC_TYPE_FLT, "geobox_min_y"},
+	/* 58 */ {WOW_DBC_TYPE_FLT, "geobox_min_z"},
+	/* 62 */ {WOW_DBC_TYPE_FLT, "geobox_max_x"},
+	/* 66 */ {WOW_DBC_TYPE_FLT, "geobox_max_y"},
+	/* 70 */ {WOW_DBC_TYPE_FLT, "geobox_max_z"},
+	         {WOW_DBC_TYPE_END, ""}
+};
+
+const wow_dbc_def_t wow_dbc_ground_effect_texture_def[] =
+{
+	/*  0 */ {WOW_DBC_TYPE_U32, "id"},
+	/*  4 */ {WOW_DBC_TYPE_U32, "doodad1"},
+	/*  8 */ {WOW_DBC_TYPE_U32, "doodad2"},
+	/* 12 */ {WOW_DBC_TYPE_U32, "doodad3"},
+	/* 16 */ {WOW_DBC_TYPE_U32, "doodad4"},
+	/* 20 */ {WOW_DBC_TYPE_U32, "density"},
+	/* 24 */ {WOW_DBC_TYPE_U32, "sound"},
+	         {WOW_DBC_TYPE_END, ""}
+};
+
+const wow_dbc_def_t wow_dbc_ground_effect_doodad_def[] =
+{
+	/* 0 */ {WOW_DBC_TYPE_U32, "id"},
+	/* 4 */ {WOW_DBC_TYPE_U32, "internal_id"},
+	/* 8 */ {WOW_DBC_TYPE_STR, "model"},
+	        {WOW_DBC_TYPE_END, ""}
 };
 
 const wow_dbc_def_t wow_dbc_helmet_geoset_vis_data_def[] =
