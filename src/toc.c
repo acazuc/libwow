@@ -20,6 +20,11 @@ wow_toc_file_t *wow_toc_file_new(const uint8_t *data, uint32_t len)
 		return NULL;
 	memset(file, 0, sizeof(*file));
 	char *org = (char*)data;
+	if (len >= 3 && data[0] == 0xEF && data[1] == 0xBB && data[2] == 0xBF) /* skip UTF-8 BOM */
+	{
+		org += 3;
+		len -= 3;
+	}
 	char *ret;
 	char *prv = org;
 	while ((ret = (char*)memchr(prv, '\n', len - (prv - org))))
@@ -39,7 +44,8 @@ wow_toc_file_t *wow_toc_file_new(const uint8_t *data, uint32_t len)
 		}
 		if (!strncmp(prv, TOKEN_INTERFACE, strlen(TOKEN_INTERFACE)))
 		{
-			/* silent version compat */
+			char *src = prv + strlen(TOKEN_INTERFACE);
+			file->version = strtoll(src, NULL, 10);
 		}
 		else if (!strncmp(prv, TOKEN_TITLE, strlen(TOKEN_TITLE)))
 		{
@@ -104,27 +110,6 @@ wow_toc_file_t *wow_toc_file_new(const uint8_t *data, uint32_t len)
 		}
 		prv = ret + 1;
 	}
-	if (!file->title)
-	{
-		file->title = WOW_MALLOC(1);
-		if (!file->title)
-			goto err;
-		file->title[0] = '\0';
-	}
-	if (!file->notes)
-	{
-		file->notes = WOW_MALLOC(1);
-		if (!file->notes)
-			goto err;
-		file->notes[0] = '\0';
-	}
-	if (!file->deps)
-	{
-		file->deps = WOW_MALLOC(1);
-		if (!file->deps)
-			goto err;
-		file->deps[0] = '\0';
-	}
 	return file;
 
 err:
@@ -142,5 +127,6 @@ void wow_toc_file_delete(wow_toc_file_t *file)
 	WOW_FREE(file->title);
 	WOW_FREE(file->notes);
 	WOW_FREE(file->deps);
+	WOW_FREE(file->url);
 	WOW_FREE(file);
 }
